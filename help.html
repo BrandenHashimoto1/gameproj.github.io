@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="p5.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-image: url("forest.jpeg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            overflow-y: hidden;
+        }   
+    </style>
+</head>
+<body>
+    
+   <div id="sendMeHelp">
+    <div class="hClass">Instructions:</div>
+    <div class="hClass" id="bolded">↑ and ↓ are only available to use when in contact with a tree</div>
+    <div class="hClass">↑ to go up whilst touching a tree</div>
+    <div class="hClass">↓ to go down whilst touching a tree</div>
+    <div class="hClass">→ to go faster</div>
+    <div class="hClass">Tip: Whilst touching multiple trees, gain increased grip, causing you to jump and go down a greater amount</div>
+    <div class="hClass">Objective:</div>
+    <div class="hClass">Coconuts harm poor monkey, avoid them as much as possible</div>
+    <div class="hClass">Collect as many bananas before monkey dies to save his tribe</div>
+   </div>
+   <a href="index.html"><img src="arrow.png" class="goBack"></a>
+    <script>
+        function preload() {
+            soundFormats('wav')
+            backMusic = loadSound('backgroundmusic.wav')
+        }
+        function setup() {
+            backMusic.setVolume(1.0)
+        }
+        function draw() {
+
+        }
+        function keyPressed() {
+            if(keyCode === 77) {
+                if(backMusic.isPlaying()) {
+                    backMusic.stop()
+                }
+                else {
+                    backMusic.loop()
+                }
+            }   
+            }
+            function easy() {
+                sessionStorage.setItem("coconutAm",2)
+                location.href = "mapSelect.html"
+            }
+            function medium() {
+                sessionStorage.setItem("coconutAm",3)
+                console.log(coconutNum)
+                location.href = "mapSelect.html"
+            }
+            function hard() {
+                sessionStorage.setItem("coconutAm",6)
+                console.log(coconutNum)
+                location.href = "mapSelect.html"
+            }
+    </script>
+</body>
+</html>

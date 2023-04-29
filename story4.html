@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="p5.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-image: url("jungle2.jpeg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="hmonkey.png" id="monkeyRun">
+    <img src="bananaTree.png" id="bananaTree1">
+    <img src="bananaTree.png" id="bananaTree2">
+    <img src="bananaTree.png" id="bananaTree3">
+    <img src="banana.png" id="banana">
+    <span id="text5">Gather as much bananas as possible within your life so that you can help keep your monkey tribe alive. The path you are on is destined to make you reach your end, just remember, don't die in vein, help others by gathering bananas.</span> 
+    <a href="story3.html"><img src="arrow.png" class="goBack"></a>
+    <a href="difficulty.html"><img src="arrow.png" id="arrow2"></a>
+    <script>
+        function preload() {
+            soundFormats('mp3')
+            collect = loadSound('collect.mp3')
+        }
+        function setup() {
+            
+        }
+        function draw() {
+
+        }  
+        function keyPressed() {
+            if(keyCode === 89) {
+                location.href = "difficulty.html"
+            }
+        }
+    </script>
+</body>
+</html>
