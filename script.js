@@ -256,7 +256,7 @@ function enemy() {
   this.updateIfMoved = function() {
     for(let moveE = 0; moveE < coconutNum; moveE++) {
       let d = sessionStorage.getItem("hurtPosX"+moveE)
-      d -= 4
+      d -= 8
       sessionStorage.setItem("hurtPosX"+moveE,d)
   }
 }
