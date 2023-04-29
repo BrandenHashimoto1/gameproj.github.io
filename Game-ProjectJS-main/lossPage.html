@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="p5.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    
+    
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-image: url('jungle1.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard">
+        <img src="banana.png" id="bananaScoreImg">
+        <span id="score">0</span>
+     
+    </div>
+    <a href="index.html" class="playAgLink"><img src="deadMonkey.png" id="monkeyDeath"></a>
+    <span id="deathMsg">Monkey hit too many coconuts, poor monkey</span>
+    <script>
+        let h = window.innerHeight;
+        let w = window.innerWidth;
+        function preload() {
+            soundFormats('mp3')
+            lossSound = loadSound('lossSound.mp3')
+        }
+        function setup() {
+            lossSound.setVolume(1,0)
+            lossSound.play()
+        }
+        function draw() {
+            
+        }
+        window.onload = function() {
+            document.getElementById("score").innerHTML = sessionStorage.getItem("score")
+            if(sessionStorage.getItem("score") < 20) {
+                document.getElementById("deathMsg").innerHTML = "Monkey hit too many coconuts, poor monkey, only collected " + sessionStorage.getItem("score") + " bananas which will barely last your tribe."
+            }
+            else {
+                document.getElementById("deathMsg").innerHTML = "Good job you collected " + sessionStorage.getItem("score") + " bananas and was able to get enough for your entire tribe. Your life was not in vein!"
+            }
+            
+        }
+    </script>
+</body>
+</html>

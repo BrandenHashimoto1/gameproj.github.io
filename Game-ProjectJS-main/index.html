@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="p5.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"
+      integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+    <style>
+      body {
+        background-image: url("jungle2.jpeg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        overflow-y: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="story.html" id="diff"><img src="playBut.png" id="playBut" onclick="playSound()"/></a>
+    <span id="highScore">Press M to Pause/Play Music at any time</span>
+    <a href="help.html" id="help"><img src="qe.png" /></a>
+    <script>
+      function preload() {
+        soundFormats("wav", "mp3");
+        backMusic = loadSound("backgroundmusic.wav");
+        fire = loadSound("firesound.mp3");
+      }
+      function setup() {
+        backMusic.setVolume(1.0);
+        fire.setVolume(1.0);
+        highScore = localStorage.getItem("highScore");
+        backMusic.loop()
+      }
+      function draw() {}
+      function keyPressed() {
+        if (keyCode === 77) {
+          if (backMusic.isPlaying()) {
+            backMusic.stop();
+          } else {
+            backMusic.loop();
+          }
+        }
+      }
+      window.onload = function () {
+        let highScoreGet = localStorage.getItem("highScore");
+        highScore = highScoreGet;
+        console.log(highScore);
+      };
+      function playSound() {
+        fire.loop();
+      }
+    </script>
+  </body>
+</html>

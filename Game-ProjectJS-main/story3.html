@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="p5.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-image: url("barren.jpeg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <img src="hmonkey.png" id="monkey">
+    <img src="sadmonkeya.png" id="sadMonkey1">
+    <img src="sadmonkeya.png" id="sadMonkeyP2">
+    <img src="sadmonkeya.png" id="sadMonkeyP3">
+    <span id="text2">That one monkey is you</span> 
+    <span id="text3">You will risk everything, even your own life for the sake of gathering bananas for others.</span>
+    <a href="story2.html"><img src="arrow.png" class="goBack"></a>
+    <a href="story4.html"><img src="arrow.png" id="arrow2"></a>
+    <script>
+        function preload() {
+            soundFormats('mp3')
+            praise = loadSound('praise.mp3')
+        }
+        function setup() {
+            praise.setVolume(1.0)
+            praise.play(5)
+        }
+        function draw() {
+
+        }  
+        function keyPressed() {
+            if(keyCode === 89) {
+                location.href = "story4.html"
+            }
+        }
+    </script>
+</body>
+</html>
