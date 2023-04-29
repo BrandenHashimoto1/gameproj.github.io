@@ -32,6 +32,7 @@
      
     </div>
     <a href="index.html" class="playAgLink"><img src="deadMonkey.png" id="monkeyDeath"></a>
+    <span id="goHome">Click Monkey to return home</span>
     <span id="deathMsg">Monkey hit too many coconuts, poor monkey</span>
     <script>
         let h = window.innerHeight;
@@ -48,12 +49,11 @@
             
         }
         window.onload = function() {
-            document.getElementById("score").innerHTML = sessionStorage.getItem("score")
-            if(sessionStorage.getItem("score") < 20) {
+            if(sessionStorage.getItem("score") < 120) {
                 document.getElementById("deathMsg").innerHTML = "Monkey hit too many coconuts, poor monkey, only collected " + sessionStorage.getItem("score") + " bananas which will barely last your tribe."
             }
             else {
-                document.getElementById("deathMsg").innerHTML = "Good job you collected " + sessionStorage.getItem("score") + " bananas and was able to get enough for your entire tribe. Your life was not in vein!"
+                document.getElementById("deathMsg").innerHTML = "Good Job! Your legacy may be over, but your tribe has " + sessionStorage.getItem("score") + " to last them until they find a new home!"
             }
             
         }

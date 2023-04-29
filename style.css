@@ -505,8 +505,8 @@ body {
 #text5 {
     background-color: white;
     position: absolute; 
-    left: 26%;
-    bottom: 0%;
+    left: 50%;
+    top: 0%;
     transform: translateX(-50%);
     width: 50%;
     height: 250px;
@@ -606,4 +606,16 @@ body {
     top: 0%;
     left: 60%;
     z-index: 10;
+}
+#goHome {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-family: 'Darumadrop One', cursive;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: -1;
 }
