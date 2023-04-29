@@ -619,3 +619,17 @@ body {
     padding: 20px;
     z-index: -1;
 }
+#bananaPile {
+    position: absolute;
+    left: 3%;
+    top: 50%;
+    width: 30%;
+    height: auto;
+}
+#bananaPile2 {
+    position: absolute;
+    left: 70%;
+    top: 50%;
+    width: 30%;
+    height: auto;
+}
